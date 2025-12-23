@@ -2,20 +2,27 @@
 {% load static %}
 
 {% block content %}
-<!-- Hero Section -->
-<section class="hero-section bg-dark text-white py-5" style="margin-top: 56px;">
-    <div class="container">
+<!-- Hero Section with Video Background -->
+<section class="hero-section position-relative text-white py-5" style="margin-top: 56px; overflow: hidden;">
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="{% static 'images/video1.mp4' %}" type="video/mp4">
+        <source src="https://cdn.coverr.co/videos/coverr-digital-data-stream-5324/1080p.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+    
+    <!-- Content -->
+    <div class="container position-relative" style="z-index: 2;">
         <div class="row align-items-center min-vh-75">
-            <div class="col-lg-6">
-                <h1 class="display-3 fw-bold mb-4">Cyber security Solution For</h1>
-                <p class="lead mb-4">Security architecture and implementation to help you make decisions about the right technology, architecture, and projects to ensure enterprise and network security.</p>
-                <div class="d-flex gap-3">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-2 fw-bold mb-4 hero-title">Cyber security Solution For Your Enterprise</h1>
+                <p class="lead mb-4 fs-4">Security architecture and implementation to help you make decisions about the right technology, architecture, and projects to ensure enterprise and network security.</p>
+                <div class="d-flex gap-3 justify-content-center">
                     <a href="{% url 'get_protected' %}" class="btn btn-primary btn-lg">Get Protected</a>
                     <a href="#services" class="btn btn-outline-light btn-lg">Our Services</a>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <img src="{% static 'images/code1.jpg' %}" alt="Cybersecurity" class="img-fluid rounded">
             </div>
         </div>
     </div>
