@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Get Protected - Latisec{% endblock %}
+
+{% block content %}
+<div style="margin-top: 56px;"></div>
+
+<section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">Get Protected Today</h1>
+        <p class="lead">Choose the perfect security plan for your business</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h4>Basic Protection</h4>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="text-center mb-4">$499<small class="text-muted">/mo</small></h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Basic threat monitoring</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Email security</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Firewall protection</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Monthly reports</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow border-primary">
+                    <div class="card-header bg-success text-white text-center">
+                        <h4>Advanced Protection</h4>
+                        <span class="badge bg-warning">POPULAR</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="text-center mb-4">$999<small class="text-muted">/mo</small></h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>24/7 monitoring</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>AI threat detection</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Vulnerability assessments</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Incident response</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Weekly reports</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-header bg-dark text-white text-center">
+                        <h4>Enterprise Protection</h4>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="text-center mb-4">Custom</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Full security suite</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Dedicated team</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Compliance management</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Custom integrations</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Real-time dashboards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow">
+                    <div class="card-body p-5">
+                        <h3 class="mb-4">Request Your Protection Plan</h3>
+                        {% crispy form %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

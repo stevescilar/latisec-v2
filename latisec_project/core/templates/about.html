@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - Latisec{% endblock %}
+
+{% block content %}
+<div style="margin-top: 56px;"></div>
+
+<section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">About Latisec</h1>
+        <p class="lead">Leading the future of enterprise cybersecurity</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                <h2 class="display-5 fw-bold mb-4">Our Mission</h2>
+                <p class="lead">To empower businesses with cutting-edge cybersecurity solutions that protect against evolving threats.</p>
+                <p>At Latisec, we believe that robust security shouldn't be complicated. Our team of experts works tirelessly to provide comprehensive protection that's both powerful and accessible.</p>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'images/mission.jpg' %}" alt="Our Mission" class="img-fluid rounded shadow">
+            </div>
+        </div>
+
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 order-lg-2">
+                <h2 class="display-5 fw-bold mb-4">Our Expertise</h2>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i>15+ years in cybersecurity</li>
+                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i>500+ enterprises protected</li>
+                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i>99.9% threat prevention rate</li>
+                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i>24/7 global monitoring</li>
+                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i>AI-powered threat detection</li>
+                </ul>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <img src="{% static 'images/expertise.jpg' %}" alt="Our Expertise" class="img-fluid rounded shadow">
+            </div>
+        </div>
+
+        <div class="text-center py-5">
+            <h2 class="display-5 fw-bold mb-4">Our Values</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                            <h5>Security First</h5>
+                            <p>Protection is our top priority</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-lightbulb fa-3x text-primary mb-3"></i>
+                            <h5>Innovation</h5>
+                            <p>Staying ahead of threats</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                            <h5>Partnership</h5>
+                            <p>Your success is our success</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-medal fa-3x text-primary mb-3"></i>
+                            <h5>Excellence</h5>
+                            <p>Committed to quality</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-4">Join Our Team</h2>
+        <p class="lead mb-4">We're always looking for talented individuals to join our mission</p>
+        <a href="#" class="btn btn-light btn-lg">View Careers</a>
+    </div>
+</section>
+{% endblock %}
