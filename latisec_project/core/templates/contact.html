@@ -20,7 +20,8 @@
                 <div class="card shadow">
                     <div class="card-body p-5">
                         <h3 class="mb-4">Send us a message</h3>
-                        {% crispy form %}
+                        {% csrf_token %}
+                        {{ form|crispy }}
                     </div>
                 </div>
             </div>

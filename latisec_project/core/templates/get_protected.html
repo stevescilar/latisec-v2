@@ -74,7 +74,8 @@
                 <div class="card shadow">
                     <div class="card-body p-5">
                         <h3 class="mb-4">Request Your Protection Plan</h3>
-                        {% crispy form %}
+                        {% csrf_token %}
+                        {{ form|crispy }}
                     </div>
                 </div>
             </div>
