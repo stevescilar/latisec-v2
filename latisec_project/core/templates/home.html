@@ -113,41 +113,72 @@
 </section>
 
 <!-- Why Choose Us -->
-<section class="py-5 bg-light">
+<!-- Why Choose Us -->
+<section class="py-5 bg-light why-choose-section position-relative overflow-hidden">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h2 class="display-5 fw-bold mb-4">Why Choose Latisec?</h2>
-                <p class="lead">
-                    99.9% prevention, 15-minute response, 24/7 monitoring.
+        <div class="row align-items-center g-5">
+
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6 fade-in-up">
+                <span class="text-primary fw-semibold text-uppercase">Why Choose Us</span>
+                <h2 class="display-5 fw-bold mt-2 mb-4">
+                    Security You Can <span class="text-primary">Trust</span>
+                </h2>
+
+                <p class="lead mb-4">
+                    We stop threats before they cause damage — with enterprise-grade
+                    protection, lightning-fast response, and 24/7 monitoring.
                 </p>
-                <a href="{% url 'about' %}" class="btn btn-primary btn-lg mt-3">Learn More</a>
+
+                <!-- Feature List -->
+                <ul class="list-unstyled why-features">
+                    <li>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>99.9% Threat Prevention Accuracy</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>15-Minute Average Incident Response</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-headset"></i>
+                        <span>24/7 Monitoring & Human Support</span>
+                    </li>
+                </ul>
+
+                <a href="{% url 'about' %}" class="btn btn-primary btn-lg mt-4">
+                    Learn More <i class="fa-solid fa-arrow-right ms-2"></i>
+                </a>
             </div>
+
+            <!-- RIGHT DASHBOARD -->
             <div class="col-lg-6">
-                <div class="card shadow">
-                    <div class="card-body text-center">
-                        <h5>Security Dashboard</h5>
-                        <div class="row my-4">
-                            <div class="col-6">
-                                <div class="bg-danger text-white p-4 rounded">
-                                    <h3>D 5.3/10</h3>
-                                    <p>Without Protection</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="bg-success text-white p-4 rounded">
-                                    <h3>A 9.2/10</h3>
-                                    <p>With Latisec</p>
-                                </div>
-                            </div>
+                <div class="security-dashboard-card">
+                    <div class="card-body">
+
+                        <h5 class="fw-bold text-center mb-4">
+                            <i class="fa-solid fa-chart-line me-2 text-primary"></i>
+                            Live Security Comparison
+                        </h5>
+
+                        <canvas id="securityChart" height="260"></canvas>
+
+                        <div class="text-center mt-4">
+                            <span class="badge bg-success fs-6 px-4 py-2">
+                                <i class="fa-solid fa-arrow-up"></i>
+                                +3.9 Security Improvement
+                            </span>
                         </div>
-                        <span class="badge bg-success fs-5">+3.9 Improvement</span>
+
                     </div>
                 </div>
-            </div>
+</div>
+
+
         </div>
     </div>
 </section>
+
 
 <!-- CTA -->
 <section class="py-5 bg-primary text-white text-center">
@@ -158,5 +189,6 @@
 {% endblock %}
 
 {% block extra_js %}
+<script src="{% static 'js/main.js' %}"></script>
 <script src="{% static 'js/animate.js' %}"></script>
 {% endblock %}

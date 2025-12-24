@@ -247,6 +247,7 @@ footer a:hover {
     margin: 0 auto;
     transition: all 0.3s ease;
     animation: pulse 2s infinite;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.3);
 }
@@ -511,6 +512,94 @@ footer a:hover {
     .stat-icon-wrapper i,
     .stats-bg-circle {
         animation: none !important;
+    }
+}
+/* Why Choose Us */
+.why-choose-section {
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.why-features li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.why-features i {
+    width: 42px;
+    height: 42px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 20px rgba(13,110,253,0.35);
+}
+
+/* Dashboard Card */
+.security-dashboard-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.security-dashboard-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Score Boxes */
+.score-box {
+    padding: 1.5rem;
+    border-radius: 15px;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.score-box h3 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.score-box span {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.score-box p {
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+.score-box.danger {
+    background: linear-gradient(135deg, #dc3545, #b02a37);
+}
+
+.score-box.success {
+    background: linear-gradient(135deg, #198754, #0f5132);
+}
+
+.score-box:hover {
+    transform: scale(1.05);
+}
+
+.security-dashboard-card canvas {
+    animation: chartGlow 3s ease-in-out infinite;
+}
+
+@keyframes chartGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 0 rgba(25,135,84,0));
+    }
+    50% {
+        filter: drop-shadow(0 10px 25px rgba(25,135,84,0.25));
     }
 }
 
