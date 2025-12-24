@@ -1,68 +1,108 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}Latisec | Enterprise Cybersecurity{% endblock %}
+
 {% block content %}
-<!-- Hero Section with Video Background -->
-<section class="hero-section position-relative text-white py-5" style="margin-top: 56px; overflow: hidden;">
-    <!-- Video Background -->
+
+<!-- Hero Section -->
+<section class="hero-section position-relative text-white" style="margin-top:56px;">
     <video autoplay muted loop playsinline class="hero-video">
         <source src="{% static 'images/video1.mp4' %}" type="video/mp4">
-        <source src="https://cdn.coverr.co/videos/coverr-digital-data-stream-5324/1080p.mp4" type="video/mp4">
     </video>
-    
-    <!-- Overlay -->
     <div class="hero-overlay"></div>
-    
-    <!-- Content -->
-    <div class="container position-relative" style="z-index: 2;">
-        <div class="row align-items-center min-vh-75">
-            <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-2 fw-bold mb-4 hero-title">Cyber security Solution For Your Enterprise</h1>
-                <p class="lead mb-4 fs-4">Security architecture and implementation to help you make decisions about the right technology, architecture, and projects to ensure enterprise and network security.</p>
-                <div class="d-flex gap-3 justify-content-center">
-                    <a href="{% url 'get_protected' %}" class="btn btn-primary btn-lg">Get Protected</a>
-                    <a href="#services" class="btn btn-outline-light btn-lg">Our Services</a>
-                </div>
+
+    <div class="hero-content-overlay">
+        <div class="container text-center">
+            <h1 class="display-2 fw-bold mb-4">Cyber Security Solution For Your Enterprise</h1>
+            <p class="lead fs-4 mb-4">
+                Security architecture and implementation to ensure enterprise protection.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="{% url 'get_protected' %}" class="btn btn-primary btn-lg">Get Protected</a>
+                <a href="#services" class="btn btn-outline-light btn-lg">Our Services</a>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Stats Section -->
-<section class="py-5 bg-primary text-white">
-    <div class="container">
+<section class="py-5 bg-primary text-white stats-section position-relative overflow-hidden">
+
+    <!-- Animated Background Circles -->
+    <div class="stats-bg-circle stats-bg-circle-1"></div>
+    <div class="stats-bg-circle stats-bg-circle-2"></div>
+    <div class="stats-bg-circle stats-bg-circle-3"></div>
+
+    <div class="container position-relative" style="z-index:2;">
         <div class="row text-center">
-            <div class="col-md-4 mb-3">
-                <h2 class="display-4">99.9%</h2>
-                <p>Threat Prevention Rate</p>
+
+            <!-- Threat Prevention -->
+            <div class="col-md-4 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper mb-3">
+                        <i class="fa-solid fa-shield-alt fa-3x"></i>
+                    </div>
+                    <h2 class="display-3 fw-bold mb-2 counter" data-target="99.9">0</h2>
+                    <p class="fs-5 text-uppercase fw-semibold mb-2">
+                        Threat Prevention Rate
+                    </p>
+                    <div class="stat-underline mx-auto"></div>
+                </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <h2 class="display-4">15min</h2>
-                <p>Average Response Time</p>
+
+            <!-- Response Time -->
+            <div class="col-md-4 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper mb-3">
+                        <i class="fas fa-bolt fa-3x"></i>
+                    </div>
+                    <h2 class="display-3 fw-bold mb-2">
+                        <span class="counter" data-target="15">0</span>min
+                    </h2>
+                    <p class="fs-5 text-uppercase fw-semibold mb-2">
+                        Average Response Time
+                    </p>
+                    <div class="stat-underline mx-auto"></div>
+                </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <h2 class="display-4">24/7</h2>
-                <p>Monitoring & Support</p>
+
+            <!-- Monitoring -->
+            <div class="col-md-4 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper mb-3">
+                        <i class="fas fa-headset fa-3x"></i>
+                    </div>
+                    <h2 class="display-3 fw-bold mb-2">24/7</h2>
+                    <p class="fs-5 text-uppercase fw-semibold mb-2">
+                        Monitoring & Support
+                    </p>
+                    <div class="stat-underline mx-auto"></div>
+                </div>
             </div>
+
         </div>
     </div>
 </section>
 
-<!-- Services Section -->
+
+
+<!-- Services -->
 <section id="services" class="py-5">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="display-5 fw-bold">Our Cybersecurity Services</h2>
-            <p class="lead">Comprehensive solutions to protect your business from evolving threats</p>
+            <p class="lead">Comprehensive solutions to protect your business</p>
         </div>
+
         <div class="row g-4">
             {% for service in services %}
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
+                <div class="card h-100 shadow-sm text-center">
+                    <div class="card-body">
                         <i class="fas {{ service.icon }} fa-3x text-primary mb-3"></i>
-                        <h5 class="card-title">{{ service.title }}</h5>
-                        <p class="card-text">{{ service.description|truncatewords:20 }}</p>
+                        <h5>{{ service.title }}</h5>
+                        <p>{{ service.description|truncatewords:20 }}</p>
                         <a href="#" class="btn btn-outline-primary">Learn More</a>
                     </div>
                 </div>
@@ -72,37 +112,36 @@
     </div>
 </section>
 
-<!-- Why Choose Us Section -->
+<!-- Why Choose Us -->
 <section class="py-5 bg-light">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-4">
+            <div class="col-lg-6">
                 <h2 class="display-5 fw-bold mb-4">Why Choose Latisec?</h2>
-                <p class="lead">Latisec delivers industry-leading cybersecurity with a 99.9% threat prevention success rate. Our 15-minute average response time ensures rapid protection, while 24/7 monitoring keeps your business secure around the clock.</p>
-                <p>Our Advanced AI Protection leverages cutting-edge machine learning for proactive threat detection. With Compliance Expertise, we ensure your business meets stringent industry standards.</p>
+                <p class="lead">
+                    99.9% prevention, 15-minute response, 24/7 monitoring.
+                </p>
                 <a href="{% url 'about' %}" class="btn btn-primary btn-lg mt-3">Learn More</a>
             </div>
             <div class="col-lg-6">
                 <div class="card shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">Security Dashboard</h5>
-                        <div class="row text-center my-4">
+                    <div class="card-body text-center">
+                        <h5>Security Dashboard</h5>
+                        <div class="row my-4">
                             <div class="col-6">
-                                <div class="score-badge bg-danger text-white p-4 rounded">
+                                <div class="bg-danger text-white p-4 rounded">
                                     <h3>D 5.3/10</h3>
-                                    <p class="mb-0">Without Protection</p>
+                                    <p>Without Protection</p>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="score-badge bg-success text-white p-4 rounded">
+                                <div class="bg-success text-white p-4 rounded">
                                     <h3>A 9.2/10</h3>
-                                    <p class="mb-0">With Latisec</p>
+                                    <p>With Latisec</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <span class="badge bg-success fs-5">+3.9 Improvement</span>
-                        </div>
+                        <span class="badge bg-success fs-5">+3.9 Improvement</span>
                     </div>
                 </div>
             </div>
@@ -110,15 +149,14 @@
     </div>
 </section>
 
-<!-- CTA Section -->
-<section class="py-5 bg-primary text-white">
-    <div class="container text-center">
-        <h2 class="display-5 fw-bold mb-4">Ready to Master Cybersecurity?</h2>
-        <p class="lead mb-4">Join Latisec to learn cutting-edge cybersecurity skills and protect your business from evolving threats.</p>
-        <div class="d-flex gap-3 justify-content-center">
-            <a href="{% url 'contact' %}" class="btn btn-light btn-lg">Contact Us</a>
-            <a href="#services" class="btn btn-outline-light btn-lg">Explore Services</a>
-        </div>
-    </div>
+<!-- CTA -->
+<section class="py-5 bg-primary text-white text-center">
+    <h2 class="display-5 fw-bold mb-4">Ready to Master Cybersecurity?</h2>
+    <a href="{% url 'contact' %}" class="btn btn-light btn-lg">Contact Us</a>
 </section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/animate.js' %}"></script>
 {% endblock %}

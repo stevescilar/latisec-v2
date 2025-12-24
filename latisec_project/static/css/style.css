@@ -224,6 +224,185 @@ footer a:hover {
 /* Stats Section */
 .stats-section {
     background: linear-gradient(135deg, var(--primary-color) 0%, #0b5ed7 100%);
+    padding: 4rem 0 !important;
+}
+
+.stat-card {
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+}
+
+.stat-icon-wrapper {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.stat-icon-wrapper:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1) rotate(5deg);
+    animation: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon-wrapper i {
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+.stat-underline {
+    width: 60px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.stat-card:hover .stat-underline {
+    width: 100px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Animated Background Circles */
+.stats-bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    animation: float 20s infinite ease-in-out;
+}
+
+.stats-bg-circle-1 {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.stats-bg-circle-2 {
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    right: -200px;
+    animation-delay: 5s;
+}
+
+.stats-bg-circle-3 {
+    width: 250px;
+    height: 250px;
+    bottom: -100px;
+    left: 30%;
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-30px) rotate(120deg);
+    }
+    66% {
+        transform: translateY(30px) rotate(240deg);
+    }
+}
+
+.col-md-4:nth-child(1) .stat-icon-wrapper {
+    animation-delay: 0s;
+}
+
+.col-md-4:nth-child(1) .stat-icon-wrapper i {
+    animation: shieldBounce 2s ease-in-out infinite;
+}
+
+.col-md-4:nth-child(2) .stat-icon-wrapper {
+    animation-delay: 0.3s;
+}
+
+.col-md-4:nth-child(2) .stat-icon-wrapper i {
+    animation: boltZap 1.5s ease-in-out infinite;
+}
+
+.col-md-4:nth-child(3) .stat-icon-wrapper {
+    animation-delay: 0.6s;
+}
+
+.col-md-4:nth-child(3) .stat-icon-wrapper i {
+    animation: clockRotate 4s linear infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shieldBounce {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+    }
+    25% {
+        transform: scale(1.1) translateY(-5px);
+    }
+    50% {
+        transform: scale(1) translateY(0);
+    }
+    75% {
+        transform: scale(0.95) translateY(3px);
+    }
+}
+
+@keyframes boltZap {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    10% {
+        transform: rotate(-10deg) scale(1.2);
+    }
+    20% {
+        transform: rotate(10deg) scale(1.1);
+    }
+    30% {
+        transform: rotate(-5deg) scale(1);
+    }
+    40%, 100% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes clockRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Service Pages */
@@ -302,3 +481,39 @@ footer a:hover {
     margin: 0 auto 2rem;
     border-radius: 2px;
 }
+/* ===============================
+   Stats Section Enhancements
+================================ */
+
+.stat-card h2 {
+    letter-spacing: -1px;
+}
+
+.stat-card p {
+    opacity: 0.95;
+}
+
+/* Improve icon contrast on small screens */
+@media (max-width: 768px) {
+    .stat-icon-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+
+    .stat-icon-wrapper i {
+        font-size: 2rem;
+    }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .stat-icon-wrapper,
+    .stat-icon-wrapper i,
+    .stats-bg-circle {
+        animation: none !important;
+    }
+}
+
+
+
+
