@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %}Security Awareness Training - Latisec{% endblock %}
+
+{% block content %}
+<div style="margin-top: 56px;"></div>
+
+<section class="service-hero py-5 text-white">
+    <div class="container text-center">
+        <i class="fas fa-graduation-cap fa-4x mb-4"></i>
+        <h1 class="display-4 fw-bold">Security Awareness Training</h1>
+        <p class="lead">Empower your team to be your first line of defense</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="fw-bold mb-4">Transform Your Workforce into Security Champions</h2>
+                <p class="lead">Human error is the leading cause of security breaches. Our comprehensive security awareness training programs equip your employees with the knowledge and skills to identify and prevent cyber threats.</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-6">
+                <div class="feature-box">
+                    <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                    <h4>Phishing Simulations</h4>
+                    <p>Regular simulated phishing attacks to test and improve employee awareness and response to email threats.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature-box">
+                    <i class="fas fa-laptop-code fa-3x text-primary mb-3"></i>
+                    <h4>Interactive Training</h4>
+                    <p>Engaging, scenario-based learning modules that make security training memorable and effective.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature-box">
+                    <i class="fas fa-certificate fa-3x text-primary mb-3"></i>
+                    <h4>Compliance Certification</h4>
+                    <p>Meet industry requirements with certified training programs that document employee completion.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature-box">
+                    <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                    <h4>Progress Tracking</h4>
+                    <p>Detailed analytics and reporting to measure training effectiveness and identify areas for improvement.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-light p-5 rounded mb-5">
+            <h3 class="mb-4">What You'll Learn</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Identifying phishing attempts</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Password best practices</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Safe browsing habits</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Social engineering awareness</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Mobile device security</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Data protection principles</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Incident reporting procedures</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Remote work security</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Ready to Strengthen Your Security Culture?</h2>
+        <a href="{% url 'contact' %}" class="btn btn-light btn-lg">Contact Us Today</a>
+    </div>
+</section>
+{% endblock %}
